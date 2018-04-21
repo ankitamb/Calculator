@@ -38,46 +38,55 @@ cout << "3 - Multiplication " << endl;
 cout << "4 - Division " << endl;
 cout << "Input: " << endl;
 
-cin >> oper;
-cout << endl;
+try{                                                //error handling
+    cin >> oper;
+    if (oper!=1 || oper!=2 || oper!=3 || oper!=4){
+        throw oper;
+        cout<<"After throw";
+    }
+        cout << endl;
 
-switch(oper){
+    switch(oper){
 
-    case 1:                                                //Addition
-        cout << "Please enter first number: " << endl;
-        cin >> x;
-        cout << "Please enter second number: " << endl;
-        cin >> y;
-        cout << x << " + " << y << " = "; 
-        cout << calc.Addition(x, y);
-        break;          
-    case 2:                                              //Subtraction
-        cout << "Please enter first number: " << endl;
-        cin >> x;
-        cout << "Please enter second number: " << endl;
-        cin >> y;
-        cout << x << " - " << y << " = ";
-        cout << calc.Subtraction(x, y);
-        break;              
-    case 3:                                             //Multiplication   
-        cout << "Please enter first number: " << endl;
-        cin >> x;
-        cout << "Please enter second number: " << endl;
-        cin >> y;
-        cout << x << " x " << y << " = ";
-        cout << calc.Multiplication(x, y);
-        break;      
-    case 4:                                             //Division
-        cout << "Please enter first number: " << endl;
-        cin >> x;
-        cout << "Please enter second number: " << endl;
-        cin >> y;
-        cout << x << " / " << y << " = ";
-        cout << calc.Division(x, y);
-        break;
-    default:                                        //If input entered is not among above four operations
-        cout << "Invalid Input";
-        break;
-}
+        case 1:                                                //Addition
+            cout << "Please enter first number: " << endl;
+            cin >> x;
+            cout << "Please enter second number: " << endl;
+            cin >> y;
+            cout << x << " + " << y << " = "; 
+            cout << calc.Addition(x, y);
+            break;          
+        case 2:                                              //Subtraction
+            cout << "Please enter first number: " << endl;
+            cin >> x;
+            cout << "Please enter second number: " << endl;
+            cin >> y;
+            cout << x << " - " << y << " = ";
+            cout << calc.Subtraction(x, y);
+            break;              
+        case 3:                                             //Multiplication   
+            cout << "Please enter first number: " << endl;
+            cin >> x;
+            cout << "Please enter second number: " << endl;
+            cin >> y;
+            cout << x << " x " << y << " = ";
+            cout << calc.Multiplication(x, y);
+            break;      
+        case 4:                                             //Division
+            cout << "Please enter first number: " << endl;
+            cin >> x;
+            cout << "Please enter second number: " << endl;
+            cin >> y;
+            cout << x << " / " << y << " = ";
+            cout << calc.Division(x, y);
+            break;
+        default:                                        //If input entered is not among above four operations
+            cout << "Invalid Input";
+            break;
+        }
+    }
+    catch (int oper){
+        cout<<"Please use 1,2,3,4 only";
+    }
 
 }
