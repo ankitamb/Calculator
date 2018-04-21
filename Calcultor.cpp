@@ -41,7 +41,7 @@ cout << "Input: " << endl;
 try{                                                //error handling
     cin >> oper;
     if (oper!=1 || oper!=2 || oper!=3 || oper!=4){
-        throw oper;
+        throw oper;                                 //throw the exception
         cout<<"After throw";
     }
         cout << endl;
@@ -85,7 +85,7 @@ try{                                                //error handling
             break;
         }
     }
-    catch (int oper){
+    catch (int oper){                                                 //catch the exception
         cout<<"Please use 1,2,3,4 only";
     }
 
